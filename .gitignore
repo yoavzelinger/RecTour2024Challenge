@@ -3,4 +3,4 @@
 /.vscode
 /data/__pycache__
 /src/__pycache__
-data/*.csv
+data/raw/*.csv
