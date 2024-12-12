@@ -76,7 +76,10 @@ def processed_to_csv(
         df (DataFrame): The DataFrame to be saved.
         set_name (str): The set name. It can be 'train' or 'val'.
     """
-    files_dictionary[set_name]["processed"] = df
+    try:
+        files_dictionary[set_name]["processed"] = df
+    except KeyError:
+        pass
     dataframe_to_csv(df, get_processed_file_path(set_name))
 
 def save_submission(
