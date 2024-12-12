@@ -1,6 +1,6 @@
 
 /__pycache__
-/.vscode
-/data/__pycache__
+data/*/*.csv
 /src/__pycache__
-data/raw/*.csv
+/src/data/__pycache__
+/src/utils/__pycache__
