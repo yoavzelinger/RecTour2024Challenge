@@ -10,9 +10,12 @@ def concatenate_data(set_name: str) -> None:
     """
     users_df = csv_to_dataframe(set_name, "users")
     matches_df = csv_to_dataframe(set_name, "matches")
+    matches_df = matches_df.drop(columns="accommodation_id")
     processed_df = users_df.merge(matches_df, on="user_id")
 
     reviews_df = csv_to_dataframe(set_name, "reviews")
+    # Drop accommodation_id column
+    reviews_df = reviews_df.drop(columns="accommodation_id")
     processed_df = processed_df.merge(reviews_df, on="review_id")
 
     return processed_df

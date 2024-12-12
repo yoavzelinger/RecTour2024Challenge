@@ -1,5 +1,5 @@
-from os import getcwd
-from os.path import join as os_path_join
+from os import getcwd, mkdir
+from os.path import join as os_path_join, exists as os_path_exists
 
 WORKING_DIRECTORY = getcwd()
 
@@ -17,6 +17,8 @@ def get_raw_file_path(set_name: str, file_type: str) -> str:
     return os_path_join(RAW_DIRECTORY_PATH, f"{set_name}_{file_type}.csv")
 
 def get_processed_file_path(file_name: str) -> str:
+    if not os_path_exists(PROCESSED_DIRECTORY_PATH):
+        mkdir(PROCESSED_DIRECTORY_PATH)
     return os_path_join(PROCESSED_DIRECTORY_PATH, f"{file_name}.csv")
 
 # OUTPUTS
