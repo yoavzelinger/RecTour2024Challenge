@@ -16,8 +16,8 @@ PROCESSED_DIRECTORY_PATH = os_path_join(DATA_DIRECTORY_PATH, _PROCESSED_DIRECTOR
 def get_raw_file_path(set_name: str, file_type: str) -> str:
     return os_path_join(RAW_DIRECTORY_PATH, f"{set_name}_{file_type}.csv")
 
-def get_processed_file_path(set_name: str) -> str:
-    return os_path_join(PROCESSED_DIRECTORY_PATH, f"{set_name}.csv")
+def get_processed_file_path(file_name: str) -> str:
+    return os_path_join(PROCESSED_DIRECTORY_PATH, f"{file_name}.csv")
 
 # OUTPUTS
 
