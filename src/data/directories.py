@@ -32,4 +32,6 @@ RESULTS_FILE_PATH = os_path_join(OUTPUTS_DIRECTORY_PATH, _RESULTS_FILE_NAME)
 PICKLE_EXTENSION = ".pickle"
 
 def get_pickle_file_path(file_name: str) -> str:
+    if not os_path_exists(OUTPUTS_DIRECTORY_PATH):
+        mkdir(OUTPUTS_DIRECTORY_PATH)
     return os_path_join(OUTPUTS_DIRECTORY_PATH, f"{file_name}{PICKLE_EXTENSION}")
