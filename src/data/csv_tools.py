@@ -29,7 +29,8 @@ files_dictionary = {    # {set_name: {file_type: DataFrame}}
 
 def csv_to_dataframe(
     set_name: str,
-    file_type: str = None
+    file_type: str = None,
+    force_update = False
     ) -> DataFrame:
     """
     Read a csv file and return a DataFrame.
@@ -37,6 +38,7 @@ def csv_to_dataframe(
     Parameters:
         set_name (str): The set name. It can be 'train', 'val' or 'test'.
         file_type (str): The file type. It can be 'matches' (not test), 'reviews' or 'users'. If None, the processed file is returned.
+        force_update (bool): If True, the file is read again.
         
     Returns:
         DataFrame: The DataFrame with the data.
@@ -44,12 +46,12 @@ def csv_to_dataframe(
     assert set_name in files_dictionary
     file_set = files_dictionary[set_name]
     if file_type is None:
-        if file_set["processed"] is None:
+        if force_update or file_set["processed"] is None:
             file_set["processed"] = read_csv(get_processed_file_path(set_name))
         return file_set["processed"]
     raw_file_set = file_set["raw"]
     assert file_type in raw_file_set
-    if raw_file_set[file_type] is None:
+    if force_update or raw_file_set[file_type] is None:
         raw_file_set[file_type] = read_csv(get_raw_file_path(set_name, file_type))
     return raw_file_set[file_type]
 
