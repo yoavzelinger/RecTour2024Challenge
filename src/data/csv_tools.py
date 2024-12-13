@@ -21,8 +21,8 @@ files_dictionary = {    # {set_name: {file_type: DataFrame}}
     },
     "test": {
         "raw": {
-            "matches": None,
-            "reviews": None
+            "reviews": None,
+            "users": None
         }
     }
 }
