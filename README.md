@@ -13,14 +13,12 @@
 ## Planning
 
 - [ ] Preprocessing:
-    - [ ] Find how to encode categorical for the NNs.
-        - [ ] Guest country (amount of countries for all sets combined).
-        - [ ] Guest type (size = 4).
     - [ ] Find the input shape:
-        - Guest country.
-        - Guest type.
-        - Month (Validate starting with 1).
-        - Amount of nights.
+        - [ ] Find how to encode categorical for the NNs.
+            - [ ] Guest country (Amount of countries for all sets combined).
+            - [ ] Guest type (size = 4).
+        - [ ] Month (Validate it's 1..12).
+        - [ ] Amount of nights.
     - [ ] Check the output shape.
 
 - [ ] Create NNs:
