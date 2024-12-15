@@ -10,7 +10,7 @@
     * models - Code for building, training, evaluating, and saving models.
     * utils - Utility scripts.
 
-# Planning
+## Planning
 
 - [ ] Preprocessing:
     - [ ] Find how to encode categorical for the NNs.
@@ -39,6 +39,6 @@
     - [ ] Find loss function.
     - [ ] Use "Binary Search" method to find the optimal values.
 
-## Other things to consider:
+### Other things to consider:
 - [ ] Adding accommodations info as inputs.
 - [ ] Ways to optimize the coefficients values.
