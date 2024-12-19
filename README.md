@@ -15,11 +15,11 @@
 - [ ] Preprocessing:
     - [ ] Find the input shape:
         - [ ] Find how to encode categorical for the NNs.
-            - [ ] Guest country (Amount of countries for all sets combined).
-            - [ ] Guest type (size = 4).
-        - [ ] Month (Validate it's 1..12).
-        - [ ] Amount of nights.
-    - [ ] Check the output shape.
+            - [ ] Guest country (Amount of countries for all sets combined) - 239 embedded to 8.
+            - [ ] Guest type - 4 embedded to 2.
+        - [ ] Month - 1.
+        - [ ] Amount of nights - 1.
+    - [ ] Check the output shape - 384.
 
 - [ ] Create NNs:
     - [ ] Find loss function.
