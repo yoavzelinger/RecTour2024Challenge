@@ -9,6 +9,8 @@ def concatenate_data(set_name: str) -> None:
         set_name (str): The set name. It can be 'train' or 'val'
     """
     users_df = csv_to_dataframe(set_name, "users")
+    
+    # Fill missing countries
     matches_df = csv_to_dataframe(set_name, "matches")
     matches_df = matches_df.drop(columns="accommodation_id")
     processed_df = users_df.merge(matches_df, on="user_id")
@@ -17,6 +19,9 @@ def concatenate_data(set_name: str) -> None:
     # Drop accommodation_id column
     reviews_df = reviews_df.drop(columns="accommodation_id")
     processed_df = processed_df.merge(reviews_df, on="review_id")
+    
+    processed_df['guest_country'] = processed_df['guest_country'].fillna("EMPTY")
+    
     return processed_df
 
 def create_concatenated_set(set_name: str) -> None:
