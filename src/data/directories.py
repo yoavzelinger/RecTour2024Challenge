@@ -24,14 +24,21 @@ def get_processed_file_path(file_name: str) -> str:
 # OUTPUTS
 
 _OUTPUTS_DIRECTORY_NAME = "out"
-_RESULTS_FILE_NAME = "results.csv"
+_RESULTS_FILE_NAME = "submission.csv"
 
 OUTPUTS_DIRECTORY_PATH = os_path_join(WORKING_DIRECTORY, _OUTPUTS_DIRECTORY_NAME)
 RESULTS_FILE_PATH = os_path_join(OUTPUTS_DIRECTORY_PATH, _RESULTS_FILE_NAME)
 
 PICKLE_EXTENSION = ".pickle"
+KERAS_EXTENSION = ".keras"
 
-def get_pickle_file_path(file_name: str) -> str:
+def _get_output_file_path(file_name, file_extension):
     if not os_path_exists(OUTPUTS_DIRECTORY_PATH):
         mkdir(OUTPUTS_DIRECTORY_PATH)
-    return os_path_join(OUTPUTS_DIRECTORY_PATH, f"{file_name}{PICKLE_EXTENSION}")
+    return os_path_join(OUTPUTS_DIRECTORY_PATH, f"{file_name}{file_extension}")
+
+def get_pickle_file_path(file_name: str) -> str:
+    return _get_output_file_path(file_name, PICKLE_EXTENSION)
+
+def get_keras_file_path(file_name: str) -> str:
+    return _get_output_file_path(file_name, KERAS_EXTENSION)
