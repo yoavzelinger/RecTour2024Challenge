@@ -15,4 +15,4 @@
     * data - Scripts for data loading.
     * models - Code for building, training, evaluating, and saving models.
     * utils - Utility scripts.
-* submissions - The submission files:
+* submissions - The submission files
