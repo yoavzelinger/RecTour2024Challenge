@@ -1,6 +1,6 @@
 from pandas import DataFrame, read_csv
 
-from src.data.directories import get_raw_file_path, get_processed_file_path, RESULTS_FILE_PATH
+from src.data.directories import get_raw_file_path, get_processed_file_path, get_submission_file_path
 
 files_dictionary = {    # {set_name: {file_type: DataFrame}}
     "train": {
@@ -84,6 +84,18 @@ def processed_to_csv(
         pass
     dataframe_to_csv(df, get_processed_file_path(set_name))
 
+def save_submission_part(part_index,
+                         df: DataFrame) -> None:
+    """
+    Save a submission part DataFrame to a csv file.
+
+    Parameters:
+        part_index (int): The part index.
+        df (DataFrame): The DataFrame to be saved.
+    """
+    dataframe_to_csv(df, get_submission_file_path(part_index))
+
+
 def save_submission(
     df: DataFrame) -> None:
     """
@@ -94,4 +106,4 @@ def save_submission(
     """
     if 'ID' not in df.columns:
         df.insert(0, "ID", range(1, len(df) + 1))
-    dataframe_to_csv(df, RESULTS_FILE_PATH)
+    dataframe_to_csv(df, get_submission_file_path())

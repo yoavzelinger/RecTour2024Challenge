@@ -45,9 +45,3 @@ def create_accommodation_reviews(set_name) -> None:
     save_to_pickle(accommodation_reviews, f"{set_name}_reviews_grouped_by_accommodation")
     print(f"Accommodation reviews for {set_name} set aggregated")
     return accommodation_reviews
-    
-if __name__ == "__main__":
-    for set_name in ["train", "val"]:
-        concatenate_set(set_name)
-        accommodation_reviews(set_name)
-    accommodation_reviews("test")
