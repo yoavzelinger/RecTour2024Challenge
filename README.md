@@ -9,7 +9,7 @@
 * out - all the processed files (pickles, models, etc.):
     * archive - old models.
     * models - the models files.
-    * pickles - saved pickles files (mostly dictionaries).
+    * pickles - saved pickles files (mostly dictionaries) (cannot be uploaded due to size, will be generated during the notebooks runs).
     * top_accommodations.csv - accommodations with top items.
 * src - Source code. Contains:
     * data - Scripts for data loading.
