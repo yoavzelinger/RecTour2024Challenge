@@ -1,5 +1,8 @@
 # RecTour2024Challenge
 
+Y&Y
+IDs: 208752667, 319068789
+
 ## Structure:
 * data - All data-related files. Contains:
     * raw - The raw input to the project (Dataset from Kaggle).
